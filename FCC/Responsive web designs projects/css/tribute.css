@@ -6,7 +6,7 @@ body{
     text-align: center;
     background-color: darkorange;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 50px;
     padding: 10px;
 
@@ -19,16 +19,45 @@ body{
 }
 
 #image{
-    width: 90%;
+    max-width: 100%;
     text-align: center;
-    vertical-align: auto;
+    height: auto;
     border-radius: 10px;
     box-shadow: grey 5px 5px 50px;
     border: lightgrey 0.5px;
+    display: block;
 }
 
 #img-caption {
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
+    padding: 25px;
+    font-size: 25px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+#text_section{
+    background-color: sandybrown;
+    padding: 20px;
+    font-size: 1.2em
+}
+#tribute-info{
+    width: 75%;
+    margin: auto;
+    text-align: justify;
+}
+h2{
+    text-decoration: underline;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-align: initial;
+}
+#link{
+    background-color: darkorange;
+    padding: 20px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+#tribute-link{
+    font-weight: bolder;
+    color: inherit;
+
 }
