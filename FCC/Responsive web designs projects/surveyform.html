@@ -4,72 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Survey Form</title>
+    <title>Document</title>
 </head>
+
+<style>
+    body{
+        background-color: rgb(29,29,29);
+        background-image: url("images/guitarbg.jpg");
+        background-repeat: no-repeat;
+        background-size: 37% 90%
+    }
+    .color-form{
+        background-color: rgba(255,0,0,0.3);
+        padding: 20px;
+        border-radius: 10px;
+        
+
+    }
+</style>
 <body>
-    <h1 id="title">Music Form</h1>
-    <p id="description">About the music you love.</p>
 
-    <form action="" method="" id="survey-form">
-        <label for="name" id="name-label">Name</label>
-        <input type="text" id="name" placeholder="Your name" required>
-
-        <label for="email" id="email-label">Email:</label>
-        <input type="email" id="email" placeholder="Your Email" required>
-
-        <label for="number" id="number-label">Age</label>
-        <input type="number" id="number" min="0" max="2" placeholder="Your age">
-
-
-        <label for="dropdown">What genre you prefer?</label>
-        <select class="custom-select" id="dropdown">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-        <label>Select this options</label>
-        <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="something">
-            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="something">
-            <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="something">
-            <label class="custom-control-label" for="customRadio2" >Or toggle this other custom radio</label>
-          </div>
-
-<label>Some checkboxes</label>
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth">
-  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-</div>
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth2">
-  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-</div>
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth3">
-  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+<div class="container text-white">
+    <div class="row">
+        <div class=" mx-auto">
+            <h1 id="title">Music Questionaire</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mx-auto">
+            <p id="description">For music lovers</p>
+        </div>
+    </div>
 </div>
 
+<div class="container  text-white">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 mx-auto color-form">
+            <form id="survey-form">  
+                <div class="form-group collg12">
+                    <label for="name" id="name-label">Name</label>
+                    <input placeholder="Your email" type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">Email</label>
+                    <input placeholder="Your email" type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label id="number-label" for="number">Age</label>
+                    <input placeholder="Your age" id="number" type="number" class="form-control" min="0" max="3" required>
+                </div>
 
-          <label>Write something</label>
-          <textarea></textarea>
+                <div class="form-group">
+                    <label>What is your favourite genre?</label>
+                    <select id="dropdown" class="custom-select">
+                        <option value="1">Rock</option>
+                        <option value="2">Pop</option>
+                        <option value="3">Rap</option>
+                    </select>
+                </div>
 
-          <button type="submit" id="submit"></button>
+                <div class="form-group">
+                    <label>Do you like music?</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="lovemusic">
+                        <label class="custom-control-label" for="customRadio1">YES</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="lovemusic">
+                        <label class="custom-control-label" for="customRadio2">NO</label>
+                    </div>
+                </div>
 
-    </form>
-    
+                <div class="form-groug">
+                    <label>What do you love most about music?</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="lovemusic1">
+                        <label class="custom-control-label" for="customCheck1">Feelings.</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="lovemusic2">
+                        <label class="custom-control-label" for="customCheck1">It has soul.</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="lovemusic3">
+                        <label class="custom-control-label" for="customCheck1">Nothing D:</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Write something about music</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <button id="submit" type="submit" class="btn btn-dark">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
 
 
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
-
 </html>
