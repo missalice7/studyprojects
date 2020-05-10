@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Music Form</h1>
+    <p id="description">About the music you love.</p>
+
+    <form action="" method="" id="survey-form">
+        <label for="name" id="name-label">Name</label>
+        <input type="text" id="name" placeholder="Your name" required>
+
+        <label for="email" id="email-label">Email:</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <label for="number" id="number-label">Age</label>
+        <input type="number" id="number" min="0" max="2" placeholder="Your age">
+
+
+        <label for="dropdown">What genre you prefer?</label>
+        <select class="custom-select" id="dropdown">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+
+        <label>Select this options</label>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="something">
+            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="something">
+            <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="something">
+            <label class="custom-control-label" for="customRadio2" >Or toggle this other custom radio</label>
+          </div>
+
+<label>Some checkboxes</label>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth">
+  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+</div>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth2">
+  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+</div>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1" value="somth3">
+  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+</div>
+
+
+          <label>Write something</label>
+          <textarea></textarea>
+
+          <button type="submit" id="submit"></button>
+
+    </form>
+    
+
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
