@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Product Landing Page</title>
+
+    <style>
+        #nav-bar{
+            position: fixed;
+        }
+        img{
+            margin: 2px;
+        }
+        .bgpink{
+            background-color: #EE6E73;
+            
+        }
+        input[type=text]:not(.browser-default), input[type=email]:not(.browser-default){
+            border-bottom: 1px solid white;
+        }
+        .input-field>label{
+            color: white;
+            display: flex;
+        }
+
+        @media only screen and (max-width: 600px) {
+  body {
+    background-color: white;
+  }
+}
+
+    </style>
+</head>
+<body>
+<header id="header">
+    <nav id="nav-bar">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="nav-link" href="#awesome">Awesome</a></li>
+            <li><a class="nav-link" href="#form">Contact</a></li>
+            <li><a class="nav-link" href="#video">Video</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+          <div class="row">
+              <div class="offset-l2 col l3 s3 m3">
+                  <img  id="header-img" src="images/hermpen.jpg" alt="hermione flash drive">
+              </div>
+              <div id="awesome" class="col l7 s7 s7">
+                  <h5>Very cute</h5>
+                  <p>You won't find a flash drive as cute as this!</p>
+                  <h5>For the fans</h5>
+                  <p>You know Hermione' decision would be to buy it.</p>
+                  <h5>Super functionality</h5>
+                  <p>You know yo ucan save all the smart stuff you made here. Never lose another file.</p>
+
+              </div>
+          </div>
+      </div>
+</header>
+<div class="row bgpink">
+    <div class="col offset-l3 l6">
+        <form id="form" class="col s12 bgpink" action="https://www.freecodecamp.com/email-submit">
+        <div class="row">
+            <div class="input-field col s6">
+            <input  id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="email" type="email" class="validate" placeholder="Your Email" name="email">
+            <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <input id="submit" type="submit" class="waves-effect waves-light btn"></a>
+        </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col offset-l4 l6">
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/NcE83Txe-3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
