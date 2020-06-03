@@ -20,25 +20,31 @@
 #btnstart{
     margin: 0 auto;
     display: block;
+    margin-top: 10%;
+    height: 50px;
+    width: 200px;
 
 }
 #inserthand{
     display: flex;
+    margin-top: 10%;
+    justify-content: center;
+    text-align: center;
 }
-.rock{
+#rock{
     width: 70px;
     height: 10122px0px;
     background: #ffffff url(images/rock.png) no-repeat;
     background-size: 75%;
     
 }
-.paper{
+#paper{
     width: 70px;
     height: 122px;
     background: url(images/paper.png) no-repeat;
     background-size: 75%;
 }
-.scissors{
+#scissors{
     width: 70px;
     height: 122px;
     background: url(images/scissors.png) no-repeat;
@@ -47,4 +53,9 @@
 
 #player-scores{
     display: flex;
+}
+
+.round-score{
+    margin-top: 10%;
+    text-align: center;
 }

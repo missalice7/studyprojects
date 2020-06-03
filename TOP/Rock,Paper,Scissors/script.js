@@ -22,14 +22,32 @@ function playRound(playerSelection, computerSelection){
 let playerScore = 0;
 let computerScore = 0;
 
-//START
-function game(){
+let rockbtn = document.getElementById("rock");
+let paperbtn = document.getElementById("paper");
+let scissorsbtn = document.getElementById("scissors");
 
-    for (let i = 0; i < 5; i++) {
+let handChoice = "none"
+
+    rockbtn.onclick = () => handChoice = "rock"
+    paperbtn.onclick = () => handChoice = "paper"
+    scissorsbtn.onclick = () => handChoice = "scissors"
+
+//START
+
+const btnstart = document.getElementById("btnstart")
+
+btnstart.onclick = function game(){
+
+    btnstart.innerText = "Your started a round of five!";
+    let subtitle = document.getElementById("subtitle")
+    
     
 
-        const playerSelection = prompt("Rock Paper Scissors").toLowerCase()
-        const computerSelection = computerPlay()
+    
+
+        subtitle.innerText =`This is your round number 1. Pick your choice`;
+        let playerSelection = handChoice
+        let computerSelection = computerPlay()
         
 
         let play = playRound(playerSelection, computerSelection)
@@ -48,10 +66,10 @@ function game(){
 
         console.log(resultLog())
         getScore()
-        //console.log(playerScore)
-       // console.log (computerScore)
+        console.log(playerScore)
+       console.log (computerScore)
         
-    }
+    
 
     function roundScore(){
         return (playerScore > computerScore) ? "You win the round!"
@@ -62,4 +80,4 @@ function game(){
     console.log(roundScore())
 }
 
-console.log(game())
+//console.log(game())
