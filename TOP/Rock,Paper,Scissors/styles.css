@@ -1,0 +1,50 @@
+*{
+    margin: 0 auto;
+}
+#bgcolour{
+    background-color: #e91e63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#main{
+    background-color: #ffffff;
+    width: 75%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+}
+#btnstart{
+    margin: 0 auto;
+    display: block;
+
+}
+#inserthand{
+    display: flex;
+}
+.rock{
+    width: 70px;
+    height: 10122px0px;
+    background: #ffffff url(images/rock.png) no-repeat;
+    background-size: 75%;
+    
+}
+.paper{
+    width: 70px;
+    height: 122px;
+    background: url(images/paper.png) no-repeat;
+    background-size: 75%;
+}
+.scissors{
+    width: 70px;
+    height: 122px;
+    background: url(images/scissors.png) no-repeat;
+    background-size: 75%;
+}
+
+#player-scores{
+    display: flex;
+}

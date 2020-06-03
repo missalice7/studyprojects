@@ -3,47 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock ! Paper ! Scissors</title>
 </head>
 <body>
+<div id="bgcolour">
+<div id="main">
+    <button id="btnstart">START!</button>
+    <!-- INSERT HAND -->
+    <div id="inserthand">
+        <div class="rock"></div>
+        <div class="paper"></div>
+        <div class="scissors"></div>
+    </div>
+    <!-- ROUND-->
+    <div id="player-scores">
+        <div class="pl1"><p>Player 1: <span>0</span></p></div>
+        <div class="pl2"><p>Player 2: <span>0</span></p></div>
+        
+    </div>
+    <!-- THE SCORE -->
+    <div class="round-score">Insert score here</div>
+</div>
+</div>
     
-
-    <script>
-
-        
-
-        function computerPlay(){
-            let hand = ["rock", "paper","scissors"]
-            let getHand = hand[Math.floor(Math.random() * hand.length)];
-            return getHand;
-        }
-        
-        const playerSelection = prompt("insert hand").toLowerCase()
-        const computerSelection = computerPlay()
-
-        
-            function playRound(playerSelection, computerSelection) {
-                
-                if (playerSelection == "rock" && computerSelection == "scissors"){
-                    return alert("You win! " + playerSelection + " beats " + computerSelection + ".");
-
-                }if (playerSelection == "scissors" && computerSelection == "paper") {
-
-                    return alert("You win! " + playerSelection + " beats " + computerSelection + ".");
-                    
-                }if (playerSelection == "paper" && computerSelection == "rock") {
-
-                    return alert("You win! " + playerSelection + " beats " + computerSelection + ".");
-                    
-                } 
-
-                return alert("You lose :( " + computerSelection + " beats " + playerSelection + ".");
-            }
-        
-
     
-    console.log(playRound(playerSelection, computerSelection))
-
-    </script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
