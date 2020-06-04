@@ -2,7 +2,8 @@
     margin: 0 auto;
 }
 #bgcolour{
-    background-color: #e91e63;
+    background: #e7a61a;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +13,12 @@
 
 #main{
     background-color: #ffffff;
-    width: 75%;
+    width: 60%;
     height: 80%;
     margin: auto;
     position: relative;
+    border: #000000 solid 1px;
+    border-radius: 10px;
 }
 #btnstart{
     margin: 0 auto;
@@ -32,23 +35,27 @@
     text-align: center;
 }
 #rock{
-    width: 70px;
-    height: 10122px0px;
     background: #ffffff url(images/rock.png) no-repeat;
     background-size: 75%;
     
 }
 #paper{
-    width: 70px;
-    height: 122px;
+
     background: url(images/paper.png) no-repeat;
     background-size: 75%;
+
 }
 #scissors{
-    width: 70px;
-    height: 122px;
+
     background: url(images/scissors.png) no-repeat;
     background-size: 75%;
+
+}
+.handbtn{
+    width: 70px;
+    height: 122px;
+    border: none;
+    
 }
 
 #player-scores{
