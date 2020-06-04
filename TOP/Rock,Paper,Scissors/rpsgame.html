@@ -10,7 +10,7 @@
 <body>
 <div id="bgcolour">
 <div id="main">
-    <div id="btnstart">Round 1. START!</div>
+    <div id="btnstart">Round <span id="round_update">1. Go!</span></div>
     <div id="subtitle"></div>
     <!-- INSERT HAND -->
     <div id="inserthand">
@@ -20,13 +20,14 @@
     </div>
     <!-- ROUND-->
     <div id="player-scores">
-        <div class="pl1"><p>Player 1: <span id="playerScore">0</span></p></div>
-        <div class="pl2"><p>Player 2: <span id="computerScore">0</span></p></div>
+        <div class="pl1"><p>Player 1: <span id="player_score">0</span></p></div>
+        <div class="pl2"><p>Player 2: <span id="computer_score">0</span></p></div>
         
     </div>
     <!-- THE SCORE -->
-    <div id="round-score"></div>
-    <div id="total score"></div>
+    <div id="round_score"></div>
+    <div id="total_score"></div>
+    <button id="reset" onclick="resetGame()">Try Again?</button>
 </div>
 </div>
     
