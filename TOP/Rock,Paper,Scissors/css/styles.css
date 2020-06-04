@@ -1,0 +1,100 @@
+
+#bgcolour{
+    background: #e7a61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#main{
+    background-color: #ffffff;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    border: #000000 solid 1px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #main {
+        width: 80%;
+        height: 70%;
+        
+    }
+  }
+
+#title_start{
+    margin: 0 auto;
+    display: block;
+    width: 400px;
+    margin-top: 5%;
+    height: 50px;
+ 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+
+}
+@media only screen and (max-width: 600px) {
+    #title_start {
+        font-size: 16px;
+        text-align: center;
+        width: 200px;
+    }
+  }
+
+#inserthand{
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    text-align: center;
+    
+}
+#rock{
+    background: #ffffff url(../images/rock.png) no-repeat;
+    background-size: 75%;
+    
+}
+#paper{
+
+    background: url(../images/paper.png) no-repeat;
+    background-size: 75%;
+
+}
+#scissors{
+
+    background: url(../images/scissors.png) no-repeat;
+    background-size: 75%;
+
+}
+.handbtn{
+    width: 70px;
+    height: 122px;
+    border: none;
+    margin: 2%;
+    
+}
+button:focus{
+    outline: none;
+}
+
+#player-scores{
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    
+}
+.scores{
+    margin: 0 auto;
+}
+
+
+#round_score{
+    margin-top: 10%;
+    text-align: center;
+    margin: 0 auto;
+}
+#reset{
+    display: none;
+}

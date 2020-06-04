@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\normalize.css">
+    <link rel="stylesheet" href="css\styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Rock ! Paper ! Scissors</title>
     
 </head>
 <body>
 <div id="bgcolour">
 <div id="main">
-    <div id="btnstart">Round <span id="round_update">1. Go!</span></div>
+    <div id="title_start">Round <span id="round_update">1</span>. Go!</div>
     <div id="subtitle"></div>
     <!-- INSERT HAND -->
     <div id="inserthand">
@@ -19,9 +22,10 @@
         <button id="scissors" class="handbtn" onclick="playRound('scissors')"></button>
     </div>
     <!-- ROUND-->
+    
     <div id="player-scores">
-        <div class="pl1"><p>Player 1: <span id="player_score">0</span></p></div>
-        <div class="pl2"><p>Player 2: <span id="computer_score">0</span></p></div>
+        <div class="scores"><p><b>PunnyHuman: </b><span id="player_score">0</span></p></div>
+        <div class="scores"><p><b>PCMasterRace: </b><span id="computer_score">0</span></p></div>
         
     </div>
     <!-- THE SCORE -->
