@@ -11,11 +11,11 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 1;
 
+let title = document.getElementById("title_start");
 let roundText = document.getElementById("round_update");
 let playerScoreText = document.getElementById("player_score");
 let computerScoreText = document.getElementById("computer_score");
 let roundScoreText = document.getElementById("round_score");
-let totalScoreText = document.getElementById("total_score");
 
 let rockbtn = document.getElementById("rock");
 let paperbtn = document.getElementById("paper");
@@ -28,6 +28,7 @@ let resetbtn = document.getElementById("reset");
 function playRound(playerSelection, computerSelection){
 
     computerSelection = computerPlay()
+    roundScoreText.classList.add("show_score");
 
     if(playerSelection === "rock" && computerSelection === "scissors"){
         playerScore +=1;
@@ -82,16 +83,16 @@ function finishRound(){
         rockbtn.disabled = true;
         paperbtn.disabled = true;
         scissorsbtn.disabled = true;
-        roundText.innerHTML = round-1;
+        title.innerHTML = "It's over.";
         resetbtn.style.display = "block";
         if(playerScore>computerScore){
-            totalScoreText.innerHTML = "You WON"
+            roundScoreText.innerHTML = "PunyHuman got lucky. Pfft"
             return;
         }if(computerScore>playerScore){
-            totalScoreText.innerHTML = "You LOST"
+            roundScoreText.innerHTML = "You lost to the AI invasion"
             return;
         }else{
-            totalScoreText.innerHTML = "TIE LOL"
+            roundScoreText.innerHTML = "A tie. for now."
             return;
         }
         return;

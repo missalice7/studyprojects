@@ -28,9 +28,10 @@
 #title_start{
     margin: 0 auto;
     display: block;
-    width: 400px;
+    width: 600px;
     margin-top: 5%;
     height: 50px;
+    text-align: center;
  
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
@@ -87,13 +88,19 @@ button:focus{
 }
 .scores{
     margin: 0 auto;
+    font-size: 20px;
 }
 
-
-#round_score{
+.show_score{
     margin-top: 10%;
+    font:  20px bold;
     text-align: center;
     margin: 0 auto;
+    border: #e7a61a solid 1px;
+    line-height: 50px;
+    height: 50px;
+    background-color: #e7a61a;
+    box-shadow: 10px 10px 39px -15px rgba(0,0,0,0.75);
 }
 #reset{
     display: none;
