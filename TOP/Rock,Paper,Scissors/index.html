@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Rock ! Paper ! Scissors</title>
-    <script src="script.js"></script> 
+    
 </head>
 <body>
 <div id="bgcolour">
@@ -14,14 +14,14 @@
     <div id="subtitle"></div>
     <!-- INSERT HAND -->
     <div id="inserthand">
-        <button id="rock"></button>
-        <button id="paper"></button>
-        <button id="scissors"></button>
+        <button id="rock" onclick="playRound('rock')"></button>
+        <button id="paper" onclick="playRound('paper')"></button>
+        <button id="scissors" onclick="playRound('scissors')"></button>
     </div>
     <!-- ROUND-->
     <div id="player-scores">
-        <div class="pl1"><p>Player 1: <span>0</span></p></div>
-        <div class="pl2"><p>Player 2: <span>0</span></p></div>
+        <div class="pl1"><p>Player 1: <span id="playerScore">0</span></p></div>
+        <div class="pl2"><p>Player 2: <span id="computerScore">0</span></p></div>
         
     </div>
     <!-- THE SCORE -->
@@ -30,6 +30,6 @@
 </div>
     
     
-    
+<script src="newgame.js"></script> 
 </body>
 </html>
