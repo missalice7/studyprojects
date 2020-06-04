@@ -55,7 +55,7 @@
     display: flex;
 }
 
-.round-score{
+#round-score{
     margin-top: 10%;
     text-align: center;
 }

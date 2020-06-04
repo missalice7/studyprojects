@@ -1,83 +1,80 @@
-
 //What pc chooses
 function computerPlay(){
-    let hand = ["rock", "paper","scissors"]
-    let getHand = hand[Math.floor(Math.random() * hand.length)];
+    let hands = ["rock", "paper","scissors"]
+    let getHand = hands[Math.floor(Math.random() * hands.length)];
     return getHand;
 }
 
 
-//Determine win/lose/tie
-
-function playRound(playerSelection, computerSelection){
-    return (playerSelection == "rock" && computerSelection == "scissors") ? "win"
-    :(playerSelection == "paper" && computerSelection == "rock") ? "win"
-    :(playerSelection == "rock" && computerSelection == "scissors") ? "win"
-    :(playerSelection == computerSelection) ?  "tie"
-    :"lose"
-    
-}
-
-
+// VARIABLES
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
+
+let playerScoreText = document.getElementById("playerScore");
+let computerScoreText = document.getElementById("computerScore");
+let roundScoreText = document.getElementById("round-score");
 
 let rockbtn = document.getElementById("rock");
 let paperbtn = document.getElementById("paper");
 let scissorsbtn = document.getElementById("scissors");
 
-let handChoice = "none"
 
-    rockbtn.onclick = () => handChoice = "rock"
-    paperbtn.onclick = () => handChoice = "paper"
-    scissorsbtn.onclick = () => handChoice = "scissors"
+// LET'S PLAY
 
-//START
+function playRound(playerSelection, computerSelection){
 
-const btnstart = document.getElementById("btnstart")
+    computerSelection = computerPlay()
 
-btnstart.onclick = function game(){
+    if(playerSelection === "rock" && computerSelection === "scissors"){
+        playerScore +=1;
+        round+=1;
+        playerScoreText.innerHTML = playerScore;
+        roundScoreText.innerHTML = "You win this round!";
+        finishRound()
+        return;
 
-    btnstart.innerText = "Your started a round of five!";
-    let subtitle = document.getElementById("subtitle")
-    
-    
+    }if(playerSelection === "paper" && computerSelection === "rock"){
+        playerScore +=1;
+        round+=1;
+        playerScoreText.innerHTML = playerScore;
+        roundScoreText.innerHTML = "You win this round!";
+        finishRound()
+        return;
 
-    
+    }if(playerSelection === "scissors" && computerSelection === "paper"){
+        playerScore +=1;
+        round+=1;
+        playerScoreText.innerHTML = playerScore;
+        roundScoreText.innerHTML = "You win this round!";
+        finishRound()
+        return;
 
-        subtitle.innerText =`This is your round number 1. Pick your choice`;
-        let playerSelection = handChoice
-        let computerSelection = computerPlay()
-        
-
-        let play = playRound(playerSelection, computerSelection)
-        
-
-        function resultLog(){
-            return   (play == "win") ? "You won!"  
-            : (play == "lose") ? "You lost."
-            : "It's a tie"
-        }
-        function getScore(){
-            return (play == "win") ? playerScore = playerScore + 1
-            : (play == "lose") ? computerScore = computerScore + 1
-            : null
-        }
-
-        console.log(resultLog())
-        getScore()
-        console.log(playerScore)
-       console.log (computerScore)
-        
-    
-
-    function roundScore(){
-        return (playerScore > computerScore) ? "You win the round!"
-        :(playerScore < computerScore) ? "You lose the round"
-        :"It's a tie for the round"
+    }if(playerSelection === computerSelection){
+        round+=1;
+        roundScoreText.innerHTML = "It's a tie.";
+        finishRound()
+        return;
+    }else{
+        round+=1
+        computerScore +=1
+        computerScoreText.innerHTML = computerScore;
+        roundScoreText.innerHTML = "Player 2 wins this round.";
+        finishRound()
+        return;
     }
 
-    console.log(roundScore())
+    
 }
 
-//console.log(game())
+// FINISH
+
+function finishRound(){
+    if(round === 5){
+        rockbtn.disabled = true;
+        paperbtn.disabled = true;
+        scissorsbtn.disabled = true;
+        return;
+    }
+    return;
+}
