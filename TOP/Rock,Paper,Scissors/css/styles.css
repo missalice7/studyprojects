@@ -74,6 +74,7 @@
     height: 122px;
     border: none;
     margin: 2%;
+    cursor: pointer;
     
 }
 button:focus{
@@ -82,10 +83,15 @@ button:focus{
 
 #player-scores{
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     text-align: center;
     
 }
+@media only screen and (max-width: 600px) {
+    #player-scores {
+        display: block;
+    }
+  }
 .scores{
     margin: 0 auto;
     font-size: 20px;
@@ -93,7 +99,8 @@ button:focus{
 
 .show_score{
     margin-top: 10%;
-    font:  20px bold;
+    font-size: 20px;
+    font-weight: 700;
     text-align: center;
     margin: 0 auto;
     border: #e7a61a solid 1px;
@@ -103,5 +110,12 @@ button:focus{
     box-shadow: 10px 10px 39px -15px rgba(0,0,0,0.75);
 }
 #reset{
-    display: none;
+    visibility: hidden;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    width: 200px;
+    margin: 0 auto;
+    cursor: pointer;
+    display: block;
 }

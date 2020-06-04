@@ -68,7 +68,7 @@ function playRound(playerSelection, computerSelection){
         computerScore +=1
         computerScoreText.innerHTML = computerScore;
         roundText.innerHTML = round;
-        roundScoreText.innerHTML = "Player 2 wins this round.";
+        roundScoreText.innerHTML = "AI wins this round.";
         finishRound()
         return;
     }
@@ -83,8 +83,8 @@ function finishRound(){
         rockbtn.disabled = true;
         paperbtn.disabled = true;
         scissorsbtn.disabled = true;
-        title.innerHTML = "It's over.";
-        resetbtn.style.display = "block";
+        title.innerHTML = "GAME OVER";
+        resetbtn.style.visibility = "visible";
         if(playerScore>computerScore){
             roundScoreText.innerHTML = "PunyHuman got lucky. Pfft"
             return;
@@ -92,7 +92,7 @@ function finishRound(){
             roundScoreText.innerHTML = "You lost to the AI invasion"
             return;
         }else{
-            roundScoreText.innerHTML = "A tie. for now."
+            roundScoreText.innerHTML = "A tie. For now puny human."
             return;
         }
         return;
