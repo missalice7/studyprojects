@@ -1,20 +1,37 @@
+#main{
+    display: flex;
+    height: 100vh;
+    background-color: lightslategrey;
+    flex-direction: column;
+    background-image: url(wallpapersketch.jpg);
+    background-size: 200px 275px;
+
+}
+#mechanics{
+    width: 600px;
+    margin: 20px auto 10px auto;
+}
+
 #container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: stretch;
-    width: 960px;
-    height: 640px;
-    margin: 0 auto;
+    max-width: 600px;
+    min-height: 600px;
+    margin: 10px auto;
+    border: 20px solid rgb(5,96,157);
+    border-radius: 10px;
 }
 
 .box{
     display: block;
-    width: 96px;
-    height: 196px;
-    background-color: green;
+    background-color: white;
+    box-shadow:inset 0px 0px 0px 1px #cbdff4;
 }
 .box:hover{
-    background-color: black;
     cursor: pointer;
 }
+
+
+
+
