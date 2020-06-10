@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 const btnrefresh = document.getElementById("refresh")
 
 
+
 //QUADRADOS RELOAD
 for (let i = 1; i <= 625; i++) {
     let divs = []
@@ -18,7 +19,6 @@ for (let i = 1; i <= 625; i++) {
 function colorBlack(){
     let boxesNodes = document.querySelectorAll(".box")
     let boxes = Array.from(boxesNodes)
-
     boxes.forEach(function(item){
         item.onmouseover = () => item.style.backgroundColor ="black"
     })
@@ -27,16 +27,15 @@ function colorBlack(){
 function colorWhite(){
     let boxesNodes = document.querySelectorAll(".box")
     let boxes = Array.from(boxesNodes)
-
     boxes.forEach(function(item){
         item.style.backgroundColor ="white"
+        item.style.opacity ="1"
     })
 }
 
 function rainbowColors(){
     let boxesNodes = document.querySelectorAll(".box")
     let boxes = Array.from(boxesNodes)
-
     boxes.forEach(function(item){
         
         item.onmouseover = function addColor(){
@@ -50,19 +49,23 @@ function rainbowColors(){
 }
 
 function opacity(){
-    let boxesNodes = document.querySelectorAll(".box")
-    let boxes = Array.from(boxesNodes)
+    let boxesNodes = document.querySelectorAll(".box");
+    let boxes = Array.from(boxesNodes);
 
     boxes.forEach(function(item){
-
-        item.onmouseover = () => item.style.backgroundColor = "black"
-        let opacity = 0
-            if (opacity <=0.9) {
-                opacity = opacity += 0.1
-                item.onmouseover = () => item.style.opacity = opacity + ""
+        let lightColor = 84
+        item.onmouseover = function addGradient() {
+            item.style.backgroundColor = "hsl(136, 0%, 84%)"
+            if (lightColor >=0) {
+                
+                lightColor -= 10
+                item.onmouseover = () => item.style.backgroundColor = "hsl(136, 0%, " + lightColor.toString() + "%)"
                 return;
+                
             }
+            return;
 
+        }
     })
 }
 
