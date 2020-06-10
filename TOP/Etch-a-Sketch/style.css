@@ -10,6 +10,7 @@
 #mechanics{
     width: 600px;
     margin: 20px auto 10px auto;
+    display: flex;
 }
 
 #container{
@@ -29,6 +30,18 @@
     box-shadow:inset 0px 0px 0px 1px #cbdff4;
 }
 .box:hover{
+    cursor: pointer;
+}
+
+button{
+    background-color: rgb(242,246,245);
+    border: rgb(60,178,242) 1px solid;
+    border-radius: 5px;
+    font-family: 'Balsamiq Sans', cursive;
+    height: 30px;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
     cursor: pointer;
 }
 

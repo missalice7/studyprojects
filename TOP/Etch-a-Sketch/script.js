@@ -38,14 +38,33 @@ function rainbowColors(){
     let boxes = Array.from(boxesNodes)
 
     boxes.forEach(function(item){
-        let randomColor= Math.floor(Math.random()*16777215).toString(16);
-        let colorHex= "#" +  
-        item.style.backgroundColor ="white"
+        
+        item.onmouseover = function addColor(){
+            let randomColor= Math.floor(Math.random()*16777215).toString(16);
+            let colorHex= "#" +  randomColor 
+            if (colorHex !== "#00000") { event.target.style.backgroundColor = "" + colorHex }
+            else {event.target.style.backgroundColor = "#3cb2f2"};
+            
+        }
     })
 }
 
+function opacity(){
+    let boxesNodes = document.querySelectorAll(".box")
+    let boxes = Array.from(boxesNodes)
 
+    boxes.forEach(function(item){
 
+        item.onmouseover = () => item.style.backgroundColor = "black"
+        let opacity = 0
+            if (opacity <=0.9) {
+                opacity = opacity += 0.1
+                item.onmouseover = () => item.style.opacity = opacity + ""
+                return;
+            }
+
+    })
+}
 
 //AGAIN!
 
@@ -86,9 +105,17 @@ function removeBoxes(){
 let btnclear = document.getElementById("clear")
 btnclear.addEventListener("click", colorWhite)
 
+// ALL BLACK
+let btnblack = document.getElementById("black")
+btnblack.addEventListener("click", colorBlack)
+
 //RAINBOW
 let btnrainbow = document.getElementById("rainbow")
 btnrainbow.addEventListener("click", rainbowColors)
+
+//GRADIENT
+let btngradient = document.getElementById("gradient")
+btngradient.addEventListener("click", opacity)
 
 
 
