@@ -51,20 +51,24 @@ function rainbowColors(){
 function opacity(){
     let boxesNodes = document.querySelectorAll(".box");
     let boxes = Array.from(boxesNodes);
+    let lightColor = 84
 
     boxes.forEach(function(item){
-        let lightColor = 84
+        
         item.onmouseover = function addGradient() {
-            item.style.backgroundColor = "hsl(136, 0%, 84%)"
-            if (lightColor >=0) {
-                
-                lightColor -= 10
-                item.onmouseover = () => item.style.backgroundColor = "hsl(136, 0%, " + lightColor.toString() + "%)"
-                return;
-                
-            }
-            return;
+            let currentRGB = getComputedStyle(item).backgroundColor
 
+                valuesRGB = currentRGB.substring(4, currentRGB.length-1)
+                        .replace(/ /g, '')
+                        .split(',');
+
+                var r = valuesRGB[0] - 20 + ""
+                var g = valuesRGB[1] - 20 + ""
+                var b = valuesRGB[2] - 20 + ""
+
+                let newRGB = `rgb(${r}, ${g}, ${b})`
+
+                item.style.backgroundColor = newRGB
         }
     })
 }
