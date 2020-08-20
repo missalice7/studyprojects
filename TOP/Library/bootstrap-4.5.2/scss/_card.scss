@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   width: 230px; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
-  height: 80%;
+  max-height: 80%;
   word-wrap: break-word;
   background-color: $card-bg;
   background-clip: border-box;

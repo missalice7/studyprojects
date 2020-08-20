@@ -17,36 +17,39 @@
                 <div class="col-md-6 col-lg-6 align-self-center">
                     <button type="button" class=" btn btn-danger btn-lg ml-auto d-block " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add a Book</button>   
                     <div class="dropdown-menu">
-                        <input class="dropdown-item" type="text" placeholder="Title">
-                        <input class="dropdown-item" type="text" placeholder="Author">
-                        <input class="dropdown-item" type="text" placeholder="Image Url">
+                        <input class="new-title dropdown-item" type="text" placeholder="Title">
+                        <input class="new-author dropdown-item" type="text" placeholder="Author">
+                        <input class="new-cover dropdown-item" type="text" placeholder="Image Url">
+                        <div role="separator" class="dropdown-divider"></div>
+                        <p type="button" class="text-right dropdown-item">Add</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--Title + Add-->
+    <!--Book List-->
     <div class="container">
         <div class="row mt-4">
-            <div class="card-deck">
-                <div class="card">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51mtZy7oJVL.jpg" class="card-img-top" alt="cover">
-                    <div class="card-body">
-                        <p class="card-title font-weight-bold">Harry Potter and the Philosopher's Stone</p>
-                        <p class="card-text">JK Rowling
-                        <button type="button" class="float-right btn btn-danger btn-sm">Not Read</button></p>
+                <div class="card-deck mx-auto mx-sm-0">
+                    <div class="card">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51mtZy7oJVL.jpg" class="card-img-top" alt="cover">
+                        <div class="card-body">
+                            <p class="card-title font-weight-bold">Harry Potter and the Philosopher's Stone</p>
+                            <p class="card-text">JK Rowling</p>
+                            <button type="button" class="btn btn-danger btn-sm">Not Read</button>
+                            <button type="button" class="float-right btn btn-danger btn-sm">Delete</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg" class="card-img-top" alt="cover">
+                        <div class="card-body">
+                            <p class="card-title font-weight-bold">Twenty Thousand Leagues Under the Sea</p>
+                            <p class="card-text">Jules Verne</p> 
+                            <button type="button" class="btn btn-success btn-sm">Read</button>
+                            <button type="button" class="float-right btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg" class="card-img-top" alt="cover">
-                    <div class="card-body">
-                        <p class="card-title font-weight-bold">Twenty Thousand Leagues Under the Sea</p>
-                        <p class="card-text">Jules Verne 
-                        <button type="button" class="float-right btn btn-success btn-sm">Read</button></p>
-                    </div>
-                </div>
-                
-            </div>
         </div>
     </div>
 

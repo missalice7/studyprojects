@@ -5243,7 +5243,7 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   width: 230px;
-  height: 80%;
+  max-height: 80%;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
