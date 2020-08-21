@@ -5,11 +5,10 @@ let lastCardDeck = libraryDiv.lastElementChild;
 
 let library = [];
 
-function Book(title,author,cover,read){
+function Book(title,author,cover){
     this.title = title,
     this.author = author,
     this.cover = cover
-    this.read = read
 }
 
 function addNewBook() {
@@ -74,12 +73,13 @@ function createCard (book){
         readBtn.innerText = 'Read'
         readBtn.classList.add('btn-success')
     }
-
     changeReadBtn(readBtn,book)
+    
 
     deleteBtn.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right','delete-btn')
     deleteBtn.type = 'button'
     deleteBtn.innerText = 'Delete'
+    deleteBook(deleteBtn)
 
     return cardDiv;
 
@@ -104,9 +104,11 @@ function changeReadBtn(button){
     })
 }
 
-function deleteBook(){
+function deleteBook(button){
 
-    let deleteBtn = document.querySelectorAll('.delete-btn')
+    button.addEventListener('click', ()=>{
+        button.parentNode.parentNode.remove()
+    })
 
 }
 
