@@ -1,6 +1,5 @@
 const BOOK_BTN = document.getElementById('BOOK_BTN');
-let libraryDiv = document.querySelector('.library');
-let lastCardDeck = libraryDiv.lastElementChild;
+let column = document.querySelector('.card-columns')
 
 
 let library = [];
@@ -25,27 +24,20 @@ function addNewBook() {
 function createCard (book){
     let div = document.createElement('div');
     let div2 = document.createElement('div');
-    let img = document.createElement('img');
     let p = document.createElement('p');
     let p2 = document.createElement('p');
     let button = document.createElement('button');
     let button2 = document.createElement('button');
 
-    
-
-    if (lastCardDeck.childElementCount == 4){
-         lastCardDeck = libraryDiv.appendChild(document.createElement('div'))
-         lastCardDeck.classList.add('card-deck', 'mx-auto')
-        }
-
-
-    let cardDiv = lastCardDeck.appendChild(div)
+    let cardDiv = column.appendChild(div)
     cardDiv.classList.add('card')
-
+    
+    if (!book.cover == ""){
+    let img = document.createElement('img');
     let imgCover = cardDiv.appendChild(img)
     imgCover.src = book.cover
     imgCover.classList.add('card-img-top')
-    imgCover.alt = book.title
+    imgCover.alt = book.title}
 
     let cardBody = cardDiv.appendChild(div2)
     cardBody.classList.add('card-body')
