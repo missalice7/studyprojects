@@ -1,23 +1,28 @@
 //import {createCard} from './JS/card.js';
 
 const BOOK_BTN = document.getElementById('BOOK_BTN');
+
 let newTitle = document.querySelector('.new-title').value
 let newAuthor = document.querySelector('.new-author').value
 let newCover = document.querySelector('.new-cover').value
+let readCheckbox = document.getElementById('READ-CHECK')
+
 
 let library = []
 
-function Book(title,author,cover){
+function Book(title,author,cover,read){
     this.title = title,
     this.author = author,
     this.cover = cover
+    this.read = read
+
 }
 
 function checkLocalStorage(){
     if (localStorage.length == 0){
 
-        let HPBook = new Book ("Harry Potter and the Philosopher's Stone", 'J.K. Rowling', 'https://images-na.ssl-images-amazon.com/images/I/51mtZy7oJVL.jpg')
-        let JVBook = new Book ("Twenty Thousand Leagues Under the Sea", 'Jules Verne', 'https://upload.wikimedia.org/wikipedia/commons/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg')
+        let HPBook = new Book ("Harry Potter and the Philosopher's Stone", 'J.K. Rowling', 'https://images-na.ssl-images-amazon.com/images/I/51mtZy7oJVL.jpg', "true")
+        let JVBook = new Book ("Twenty Thousand Leagues Under the Sea", 'Jules Verne', 'https://upload.wikimedia.org/wikipedia/commons/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg', "false")
         library.push(HPBook)
         library.push(JVBook)
 
@@ -32,15 +37,23 @@ function checkLocalStorage(){
             createCard (e)
         })
     }
+    return library
 }
 checkLocalStorage()
 
 
 
 function addNewBook() {
-    
 
-    let newBook = new Book (newTitle, newAuthor, newCover)
+    let readStatus;
+    
+    if(readCheckbox.checked){
+        readStatus = "true"
+    }else{
+        readStatus = "false"
+    }
+
+    let newBook = new Book (newTitle, newAuthor, newCover,readStatus)
     library.push(newBook)
 
     return newBook; 
@@ -58,12 +71,14 @@ function createCard (book){
     let cardDiv = column.appendChild(div)
     cardDiv.classList.add('card')
     
-    if (!book.cover == ""){
+    if (book.cover !== ""){
         let img = document.createElement('img');
         let imgCover = cardDiv.appendChild(img)
         imgCover.src = book.cover
         imgCover.classList.add('card-img-top')
         imgCover.alt = book.title
+    }else{
+        book.cover = ""
     }
 
     let cardBody = cardDiv.appendChild(div2)
@@ -83,12 +98,12 @@ function createCard (book){
     readBtn.classList.add('read-btn', 'btn', 'btn-sm')
     readBtn.type = 'button'
     
-    let readCheckbox = document.getElementById('READ-CHECK')
-    if (readCheckbox.checked !== true){
+    
+    if (book.read == 'false'){
         readBtn.innerText = 'Not Read'
         readBtn.classList.add('btn-danger')
     }
-    if(readCheckbox.checked === true){
+    if(book.read == 'true'){
         readBtn.innerText = 'Read'
         readBtn.classList.add('btn-success')
     }
@@ -106,33 +121,61 @@ function createCard (book){
 
 function changeReadBtn(button){
 
+    
+
     button.addEventListener('click', () =>{
+
+        function updateRead(){
+            library = JSON.parse(localStorage.getItem("library"));
+            let author = button.previousSibling.innerText
+    
+            library.forEach(e=> {
+    
+                if(e.author === author){
+
+                    if(e.read == 'true'){
+                        e.read = 'false' 
+                        return;}if(e.read == 'false'){
+                            e.read = 'true'
+                            return;}
+                }else{return;}
+                
+            })
+            console.log(library)
+            localStorage.setItem("library", JSON.stringify(library));
+        }
+
         if (button.innerText == 'Not Read') {
             button.innerText = "Read"
             button.classList.remove('btn-danger')
             button.classList.add('btn-success')
+            updateRead()
             return;
 
-        }else{
+        }if(button.innerText == 'Read'){
             button.innerText = "Not Read"
             button.classList.remove('btn-success')
             button.classList.add('btn-danger')
-            return;
+            updateRead()
         }
-    })
+
+        
+    }) 
 }
 
 function deleteBook(button){
 
     button.addEventListener('click', ()=>{
         button.parentNode.parentNode.remove()
+
+
         library = JSON.parse(localStorage.getItem("library"));
-        for (var i =0; i< items.length; i++) {
-            var items = JSON.parse(items[i]);
-            if (items.itemId == 3) {
-                items.splice(i, 1);
-            }
-        }
+        let author = button.previousSibling.previousSibling.innerText
+
+        library = library.filter(element => element.author !==author)
+        console.log(library)
+        localStorage.setItem("library", JSON.stringify(library));
+        
     })
 
 }
