@@ -1,12 +1,6 @@
-//import {createCard} from './JS/card.js';
-
 const BOOK_BTN = document.getElementById('BOOK_BTN');
 
-let newTitle = document.querySelector('.new-title').value
-let newAuthor = document.querySelector('.new-author').value
-let newCover = document.querySelector('.new-cover').value
 let readCheckbox = document.getElementById('READ-CHECK')
-
 
 let library = []
 
@@ -44,6 +38,10 @@ checkLocalStorage()
 
 
 function addNewBook() {
+
+    let newTitle = document.querySelector('.new-title').value
+    let newAuthor = document.querySelector('.new-author').value
+    let newCover = document.querySelector('.new-cover').value
 
     let readStatus;
     
@@ -141,7 +139,6 @@ function changeReadBtn(button){
                 }else{return;}
                 
             })
-            console.log(library)
             localStorage.setItem("library", JSON.stringify(library));
         }
 
@@ -188,5 +185,4 @@ function addBookToLibrary(){
 
 BOOK_BTN.addEventListener("click", addBookToLibrary)
 
-//export {changeReadBtn, deleteBook}
 
