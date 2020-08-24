@@ -73,7 +73,7 @@ function createCard (book){
     let cardDiv = column.appendChild(div)
     cardDiv.classList.add('card')
     
-    if (book.cover == undefined){
+    if (book.cover !== ""){
         let img = document.createElement('img');
         let imgCover = cardDiv.appendChild(img)
         imgCover.src = book.cover
