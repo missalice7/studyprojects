@@ -1,8 +1,8 @@
 const BOOK_BTN = document.getElementById('BOOK_BTN');
 
-let readCheckbox = document.getElementById('READ-CHECK')
 
 let library = []
+
 
 function Book(title,author,cover,read){
     this.title = title,
@@ -13,7 +13,7 @@ function Book(title,author,cover,read){
 }
 
 function checkLocalStorage(){
-    if (localStorage.length == 0){
+    if (localStorage.length == 0 || localStorage == undefined){
 
         let HPBook = new Book ("Harry Potter and the Philosopher's Stone", 'J.K. Rowling', 'https://images-na.ssl-images-amazon.com/images/I/51mtZy7oJVL.jpg', "true")
         let JVBook = new Book ("Twenty Thousand Leagues Under the Sea", 'Jules Verne', 'https://upload.wikimedia.org/wikipedia/commons/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg', "false")
@@ -21,6 +21,9 @@ function checkLocalStorage(){
         library.push(JVBook)
 
         localStorage.setItem("library", JSON.stringify(library));
+
+        createCard (HPBook)
+        createCard (JVBook)
         return;
 
     }else{
@@ -33,8 +36,8 @@ function checkLocalStorage(){
     }
     return library
 }
-checkLocalStorage()
 
+checkLocalStorage()
 
 
 function addNewBook() {
@@ -42,6 +45,7 @@ function addNewBook() {
     let newTitle = document.querySelector('.new-title').value
     let newAuthor = document.querySelector('.new-author').value
     let newCover = document.querySelector('.new-cover').value
+    let readCheckbox = document.getElementById('READ-CHECK')
 
     let readStatus;
     
@@ -69,7 +73,7 @@ function createCard (book){
     let cardDiv = column.appendChild(div)
     cardDiv.classList.add('card')
     
-    if (book.cover !== ""){
+    if (book.cover == undefined){
         let img = document.createElement('img');
         let imgCover = cardDiv.appendChild(img)
         imgCover.src = book.cover
